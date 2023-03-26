@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Players')
@@ -16,10 +16,9 @@ export class Players extends Component {
     }
 
     generatePlayer() {
-        this.player.createNode((err, node) => {
-            node.setParent(this.node)
-            node.setPosition(0, 0)
-        })
+        const node = instantiate(this.player)
+        node.setParent(this.node)
+        node.setPosition(0, 0)
     }
 }
 

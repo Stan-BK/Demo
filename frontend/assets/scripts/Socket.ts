@@ -1,6 +1,7 @@
 import { _decorator, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
 import { Players } from './Players'
+import GlobalInstance from './Global';
 
 const WS = 'ws://127.0.0.1:8080'
 
@@ -19,8 +20,10 @@ export class Socket extends Component {
   }
 
   establishWS() {
-    // @ts-expect-error cocos官网示意绑定到wsInstance
-    const ws = this.wsInstance = new WebSocket(WS)
+    const ws = GlobalInstance['socket'] = new WebSocket(WS)
+    ws.onmessage = (res) => {
+      console.log(res.data)
+    }
     ws.onopen = () => {
       this.Players.generatePlayer()
     }

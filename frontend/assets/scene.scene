@@ -50,7 +50,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 30
+      "__id__": 29
     },
     "_id": "120147b8-7e40-46e3-b5a6-9252e4c9461b"
   },
@@ -75,6 +75,9 @@
     "_active": true,
     "_components": [
       {
+        "__id__": 25
+      },
+      {
         "__id__": 26
       },
       {
@@ -82,15 +85,12 @@
       },
       {
         "__id__": 28
-      },
-      {
-        "__id__": 29
       }
     ],
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 480,
+      "x": 479.99999999999994,
       "y": 320.00000000000006,
       "z": 0
     },
@@ -174,7 +174,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 414.91525423728814,
+    "_orthoHeight": 902,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -742,7 +742,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "enemy1",
+    "_name": "Players",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -752,9 +752,6 @@
     "_components": [
       {
         "__id__": 24
-      },
-      {
-        "__id__": 25
       }
     ],
     "_prefab": null,
@@ -778,17 +775,17 @@
       "z": 1
     },
     "_mobility": 0,
-    "_layer": 33554432,
+    "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
       "z": 0
     },
-    "_id": "34gq1cgXJB95zNwxlf6YkF"
+    "_id": "16uycWCE5OJrjc5cfUgka3"
   },
   {
-    "__type__": "cc.UITransform",
+    "__type__": "8b12aXfMFtO7bmyHeOjkJXH",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -796,55 +793,11 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 24,
-      "height": 28
+    "player": {
+      "__uuid__": "e24bf766-8c15-489b-aac0-8eaf75822a5c",
+      "__expectedType__": "cc.Prefab"
     },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
-    },
-    "_id": "5cdGEYoZhNp648ziZv9P4i"
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 23
-    },
-    "_enabled": true,
-    "__prefab": null,
-    "_customMaterial": null,
-    "_srcBlendFactor": 2,
-    "_dstBlendFactor": 4,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_spriteFrame": {
-      "__uuid__": "57b475d1-08f6-4e69-b837-5c31d35a1c79@f9941",
-      "__expectedType__": "cc.SpriteFrame"
-    },
-    "_type": 0,
-    "_fillType": 0,
-    "_sizeMode": 1,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_useGrayscale": false,
-    "_atlas": null,
-    "_id": "0d8r1RKcpEQ4gi+Fa3mcVt"
+    "_id": "0bQFgDfTFFs78Af39ZLkAf"
   },
   {
     "__type__": "cc.UITransform",
@@ -893,8 +846,8 @@
     "__prefab": null,
     "_alignFlags": 45,
     "_target": null,
-    "_left": 0,
-    "_right": 0,
+    "_left": -5.684341886080802e-14,
+    "_right": -5.684341886080802e-14,
     "_top": 5.684341886080802e-14,
     "_bottom": 5.684341886080802e-14,
     "_horizontalCenter": 0,
@@ -912,7 +865,7 @@
     "_id": "c5V1EV8IpMtrIvY1OE9t2u"
   },
   {
-    "__type__": "9f547N8Z0NEiZ3ba2dZXmbA",
+    "__type__": "94058iLyvFFVImCAyPYdn9r",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -920,27 +873,30 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_id": "383u27JKVMeL6rpPJ7gtEm"
+    "Players": {
+      "__id__": 24
+    },
+    "_id": "81KRl/IzZIq4WSxlKA/V1J"
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 31
+      "__id__": 30
     },
     "shadows": {
-      "__id__": 32
+      "__id__": 31
     },
     "_skybox": {
-      "__id__": 33
+      "__id__": 32
     },
     "fog": {
-      "__id__": 34
+      "__id__": 33
     },
     "octree": {
-      "__id__": 35
+      "__id__": 34
     },
     "lightProbeInfo": {
-      "__id__": 36
+      "__id__": 35
     },
     "bakedWithStationaryMainLight": false
   },

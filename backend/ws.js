@@ -2,6 +2,7 @@ const http = require('http');
 const ws = require('ws');
 
 const wss = new ws.Server({ noServer: true });
+const players = []
 
 function accept(req, res) {
   // all incoming requests must be websockets
@@ -20,13 +21,25 @@ function accept(req, res) {
 }
 
 function onConnect(ws) {
+  players.push(ws)
+  ws.pos = '(0, 0, 0)'
+  getPlayersPos(ws)
   ws.on('message', function (message) {
-    message = message.toString();
-    let name = message.match(/([\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]+)$/gu) || "Guest";
-    ws.send(`Hello from server, ${name}!`);
-
-    setTimeout(() => ws.close(1000, "Bye!"), 5000);
+    ws.pos = message.toString()
+    // setTimeout(() => ws.close(1000, "Bye!"), 5000);
+    getPlayersPos(ws)
   });
+}
+
+function getPlayersPos(ws) {
+  const arr = []
+  for (let i = 0; i < players.length; i++) {
+    const player = players[i]
+    if (player === ws) continue
+    arr.push(player.pos)
+  }
+  console.log(arr)
+  players.forEach(item => item.send(arr.toString()))
 }
 
 if (!module.parent) {
