@@ -3,6 +3,7 @@ const ws = require('ws');
 
 const wss = new ws.Server({ noServer: true });
 const players = []
+let id = 0
 
 function accept(req, res) {
   // all incoming requests must be websockets
@@ -21,25 +22,50 @@ function accept(req, res) {
 }
 
 function onConnect(ws) {
-  players.push(ws)
-  ws.pos = '(0, 0, 0)'
-  getPlayersPos(ws)
+  const newPlayer = {
+    id: id++,
+    ws
+  }
+  newPlayer.pos = JSON.stringify({
+    x: 0,
+    y: 0,
+    z: 0
+  })
+  sendNewPlayer(newPlayer)
   ws.on('message', function (message) {
-    ws.pos = message.toString()
+    newPlayer.pos = message.toString()
     // setTimeout(() => ws.close(1000, "Bye!"), 5000);
-    getPlayersPos(ws)
+    sendPlayersPos(newPlayer)
   });
 }
 
-function getPlayersPos(ws) {
+function sendPlayersPos(player) {
+  players.forEach(item => item !== player && item.ws.send(JSON.stringify({
+    type: 'move',
+    id: player.id,
+    pos: player.pos
+  })))
+}
+
+function sendNewPlayer(player) {
   const arr = []
-  for (let i = 0; i < players.length; i++) {
-    const player = players[i]
-    if (player === ws) continue
-    arr.push(player.pos)
-  }
-  console.log(arr)
-  players.forEach(item => item.send(arr.toString()))
+  players.forEach(item => {
+    const o = {
+      id: item.id,
+      pos: item.pos
+    }
+    arr.push(o)
+    item.ws.send(JSON.stringify({
+      type: 'add',
+      id: player.id,
+      pos: player.pos
+    }))
+  })
+  player.ws.send(JSON.stringify({
+    type: 'move',
+    pos: arr
+  }))
+  players.push(player)
 }
 
 if (!module.parent) {
