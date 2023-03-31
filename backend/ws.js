@@ -69,7 +69,9 @@ function sendNewPlayer(player) {
 }
 
 if (!module.parent) {
-  http.createServer(accept).listen(8080);
+  http.createServer(accept).listen(8080, () => {
+    console.log('Server is run on 8080')
+  });
 } else {
   exports.accept = accept;
 }
