@@ -20,7 +20,9 @@
     ],
     "_active": true,
     "_components": [],
-    "_prefab": null,
+    "_prefab": {
+      "__id__": 29
+    },
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -50,7 +52,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 29
+      "__id__": 30
     },
     "_id": "120147b8-7e40-46e3-b5a6-9252e4c9461b"
   },
@@ -174,7 +176,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 902,
+    "_orthoHeight": 329.6385542168675,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -794,7 +796,7 @@
     "_enabled": true,
     "__prefab": null,
     "player": {
-      "__uuid__": "e24bf766-8c15-489b-aac0-8eaf75822a5c",
+      "__uuid__": "8d406df4-fd0f-4c9e-b8f9-74d313e8173c",
       "__expectedType__": "cc.Prefab"
     },
     "_id": "0bQFgDfTFFs78Af39ZLkAf"
@@ -879,24 +881,32 @@
     "_id": "81KRl/IzZIq4WSxlKA/V1J"
   },
   {
+    "__type__": "cc.PrefabInfo",
+    "root": null,
+    "asset": null,
+    "fileId": "120147b8-7e40-46e3-b5a6-9252e4c9461b",
+    "instance": null,
+    "targetOverrides": null
+  },
+  {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 30
-    },
-    "shadows": {
       "__id__": 31
     },
-    "_skybox": {
+    "shadows": {
       "__id__": 32
     },
-    "fog": {
+    "_skybox": {
       "__id__": 33
     },
-    "octree": {
+    "fog": {
       "__id__": 34
     },
-    "lightProbeInfo": {
+    "octree": {
       "__id__": 35
+    },
+    "lightProbeInfo": {
+      "__id__": 36
     },
     "bakedWithStationaryMainLight": false
   },

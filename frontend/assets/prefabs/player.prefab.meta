@@ -2,12 +2,12 @@
   "ver": "1.1.43",
   "importer": "prefab",
   "imported": true,
-  "uuid": "e24bf766-8c15-489b-aac0-8eaf75822a5c",
+  "uuid": "2ee91d03-17ec-41fc-a7cf-3513c6b8615f",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "player"
+    "syncNodeName": "Player"
   }
 }

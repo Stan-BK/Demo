@@ -70,9 +70,8 @@ export class Player extends Component {
         this.pos.x += this.dir.x
         this.pos.y += this.dir.y
         this.node.setPosition(this.pos)
-        console.log(this.pos.toString())
         if (this.dir.x || this.dir.y) {
-            this.socket.send(this.pos)
+            this.socket.send(JSON.stringify(this.pos))
         }
         // tween.to(.1, {
         //     position: this.pos

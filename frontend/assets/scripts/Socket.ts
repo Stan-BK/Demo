@@ -22,7 +22,18 @@ export class Socket extends Component {
   establishWS() {
     const ws = GlobalInstance['socket'] = new WebSocket(WS)
     ws.onmessage = (res) => {
-      console.log(res.data)
+      const data = JSON.parse(res.data)
+
+      if (data.type === 'add') {
+        this.Players.generateEnemy(data.id, data.pos)
+      } else {
+        if (Array.isArray(data.pos)) {
+          data.pos.forEach(item => {
+            this.Players.generateEnemy(item.id, item.pos)
+          })
+        } else
+          this.Players.moveEnemy(data.id, data.pos)
+      }
     }
     ws.onopen = () => {
       this.Players.generatePlayer()
